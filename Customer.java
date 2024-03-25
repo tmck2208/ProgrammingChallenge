@@ -44,14 +44,13 @@ public class Customer  //super or parent class
       public OnlineCustomer(String n, String a, String e)
 
 {
-  
-
+    super(n,a);
+    email = e;
 }
 
 public String toString()
 {
-   
-
+    return super + "\nEmail: " + email;
 } 
 
 
