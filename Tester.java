@@ -13,8 +13,8 @@ import java.util.*;
       cart.add(new Item("milk", 2.50));
 
       // Uncomment these to test
-      //cart.add(new DiscountedItem("ice cream", 4.50, 1.50));
-      //cart.add(new DiscountedItem("apples", 1.35, 0.25));
+      cart.add(new DiscountedItem("ice cream", 4.50, 1.50));
+      cart.add(new DiscountedItem("apples", 1.35, 0.25));
 
       cart.printOrder();
     }
@@ -24,13 +24,24 @@ import java.util.*;
   class DiscountedItem extends Item
   {
       // add an instance variable for the discount
-
+      private double discount;
       // Add constructors that call the super constructor
-
+      public DiscountedItem(String n, double p, double d){
+        super(n,p);
+        discount = d;
+      }
       // Add get/set methods for discount
+      public void setDiscount(double d){
+        discount = d;
+      }
+    
       public double getDiscount()
       {
-        return 0.0; // return discount here instead of 0
+        return discount; // return discount here instead of 0
+      }
+
+      public String toString(){
+        return super + " (" + super.valueToString(discount) + ")";
       }
 
       // Add a toString() method that returns a call to the super toString
